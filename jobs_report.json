@@ -1,0 +1,26 @@
+[
+  {
+    "title": "AI Platform Engineer",
+    "company": "C AI",
+    "city": "Shenzhen",
+    "salary": "35k-50k",
+    "url": "https://example.com/job/3",
+    "score": 85
+  },
+  {
+    "title": "Python Backend Engineer",
+    "company": "A Tech",
+    "city": "Shanghai",
+    "salary": "25k-35k",
+    "url": "https://example.com/job/1",
+    "score": 65
+  },
+  {
+    "title": "Python Developer",
+    "company": "E Cloud",
+    "city": "Remote",
+    "salary": "22k-32k",
+    "url": "https://example.com/job/5",
+    "score": 55
+  }
+]
