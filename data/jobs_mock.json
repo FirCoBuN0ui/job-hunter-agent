@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Python Backend Engineer",
+    "company": "A Tech",
+    "city": "Shanghai",
+    "salary": "25k-35k",
+    "description": "Python, FastAPI, Docker, 支持远程",
+    "url": "https://example.com/job/1"
+  },
+  {
+    "title": "Data Engineer",
+    "company": "B Data",
+    "city": "Beijing",
+    "salary": "30k-45k",
+    "description": "ETL, SQL, Airflow",
+    "url": "https://example.com/job/2"
+  },
+  {
+    "title": "AI Platform Engineer",
+    "company": "C AI",
+    "city": "Shenzhen",
+    "salary": "35k-50k",
+    "description": "Python, LLM, API, remote",
+    "url": "https://example.com/job/3"
+  },
+  {
+    "title": "Java Backend Engineer",
+    "company": "D Soft",
+    "city": "Hangzhou",
+    "salary": "20k-30k",
+    "description": "Java, Spring, MySQL",
+    "url": "https://example.com/job/4"
+  },
+  {
+    "title": "Python Developer",
+    "company": "E Cloud",
+    "city": "Remote",
+    "salary": "22k-32k",
+    "description": "Python, Flask, REST API",
+    "url": "https://example.com/job/5"
+  }
+]
