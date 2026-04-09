@@ -69,7 +69,7 @@ python main.py --stats --db jobs.db
 ├─ main.py
 ├─ config.yaml
 ├─ requirements.txt
-└─ Makefile
+└─ scripts.ps1
 ```
 
 ## Roadmap
