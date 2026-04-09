@@ -1,5 +1,9 @@
 .venv/
 __pycache__/
-.pytest_cache/
-.idea/
 *.pyc
+jobs.db
+jobs_report.json
+jobs_report.md
+topn.csv
+history.md
+history_*.md

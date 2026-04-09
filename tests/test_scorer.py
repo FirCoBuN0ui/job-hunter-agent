@@ -2,30 +2,30 @@ from src.models import Job
 from src.scorer import score_job
 
 
-def make_job(title: str, description: str) -> Job:
+def make_job(title: str, description: str, salary: str = "20k-25k") -> Job:
     return Job(
         title=title,
         company="Demo",
         city="Shanghai",
-        salary="20k-30k",
+        salary=salary,
         description=description,
         url="https://example.com/job/1",
     )
 
 
-def test_score_hits_keywords():
-    job = make_job("Python Backend Engineer", "Need Python, FastAPI, Docker")
-    score = score_job(job, ["python", "fastapi"])
-    assert score >= 40
+def test_salary_bonus_high_ge_40k():
+    job = make_job(title="Backend", description="ETL", salary="20k-45k")
+    score = score_job(job, keywords=[])
+    assert score == 10
 
 
-def test_score_remote_bonus():
-    job = make_job("Backend Engineer", "支持远程办公，熟悉API开发")
-    score = score_job(job, ["api"])
-    assert score >= 30
+def test_salary_bonus_mid_ge_30k():
+    job = make_job(title="Backend", description="ETL", salary="20k-32k")
+    score = score_job(job, keywords=[])
+    assert score == 5
 
 
-def test_score_empty_keywords():
-    job = make_job("Data Engineer", "SQL and ETL")
-    score = score_job(job, [])
+def test_salary_bonus_invalid_string():
+    job = make_job(title="Backend", description="ETL", salary="negotiable")
+    score = score_job(job, keywords=[])
     assert score == 0

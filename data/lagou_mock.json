@@ -1,0 +1,18 @@
+[
+  {
+    "positionName": "Data Engineer",
+    "companyFullName": "B Tech",
+    "city": "Beijing",
+    "salary": "20k-30k",
+    "positionAdvantage": "sql etl python",
+    "positionUrl": "https://example.com/2"
+  },
+  {
+    "positionName": "Go Developer",
+    "companyFullName": "C Tech",
+    "city": "Shenzhen",
+    "salary": "30k-45k",
+    "positionAdvantage": "go microservice remote",
+    "positionUrl": "https://example.com/3"
+  }
+]

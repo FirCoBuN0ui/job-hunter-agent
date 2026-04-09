@@ -2,6 +2,6 @@
 
 | Rank | Title | Company | City | Salary | Score | URL |
 |---:|---|---|---|---|---:|---|
-| 1 | AI Platform Engineer | C AI | Shenzhen | 35k-50k | 85 | https://example.com/job/3 |
-| 2 | Python Backend Engineer | A Tech | Shanghai | 25k-35k | 65 | https://example.com/job/1 |
-| 3 | Python Developer | E Cloud | Remote | 22k-32k | 55 | https://example.com/job/5 |
+| 1 | Python Backend Engineer | A Tech | Shanghai | 25k-35k | 100 | https://example.com/1 |
+| 2 | Data Engineer | B Tech | Beijing | 20k-30k | 100 | https://example.com/2 |
+| 3 | Go Developer | C Tech | Shenzhen | 30k-45k | 100 | https://example.com/3" |

@@ -1,0 +1,18 @@
+[
+  {
+    "jobName": "Python Backend Engineer",
+    "brandName": "A Tech",
+    "cityName": "Shanghai",
+    "salaryDesc": "25k-35k",
+    "postDescription": "python api remote",
+    "jobUrl": "https://example.com/1"
+  },
+  {
+    "jobName": "AI Platform Engineer",
+    "brandName": "C AI",
+    "cityName": "Shenzhen",
+    "salaryDesc": "30k-45k",
+    "postDescription": "llm platform python",
+    "jobUrl": "https://example.com/9"
+  }
+]

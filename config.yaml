@@ -1,0 +1,12 @@
+source: local
+input: data/jobs_mock.csv
+keywords:
+  - python
+  - api
+top: 5
+min_score: 0
+db: jobs.db
+out: jobs_report.json
+out_md: jobs_report.md
+export_csv: topn.csv
+log_level: INFO
