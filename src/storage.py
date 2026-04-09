@@ -16,45 +16,44 @@ def init_db(db_path: str = "jobs.db") -> None:
                 city TEXT NOT NULL,
                 salary TEXT NOT NULL,
                 url TEXT NOT NULL,
-                score INTEGER NOT NULL
+                score INTEGER NOT NULL,
+                UNIQUE(title, company, city, url)
             )
             """
         )
+        
         conn.commit()
     finally:
         conn.close()
 
 
-def save_ranked_jobs(rows: list[dict], db_path: str = "jobs.db", run_at: str = "") -> int:
-    if not rows:
-        return 0
+def save_ranked_jobs(rows, db_path="jobs.db", run_at=None) -> int:
+    run_at = run_at or datetime.now().isoformat(timespec="seconds")
+    inserted = 0
 
-    conn = sqlite3.connect(db_path)
-    try:
-        data = [
-            (
-                run_at,
-                r["title"],
-                r["company"],
-                r["city"],
-                r["salary"],
-                r["url"],
-                int(r["score"]),
+    with sqlite3.connect(db_path) as conn:
+        cur = conn.cursor()
+        for r in rows:
+            cur.execute(
+                """
+                INSERT OR IGNORE INTO ranked_jobs
+                (title, company, city, salary, url, score, run_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    r.get("title", ""),
+                    r.get("company", ""),
+                    r.get("city", ""),
+                    r.get("salary", ""),
+                    r.get("url", ""),
+                    int(r.get("score", 0)),
+                    run_at,
+                ),
             )
-            for r in rows
-        ]
-        conn.executemany(
-            """
-            INSERT INTO ranked_jobs (run_at, title, company, city, salary, url, score)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-            """,
-            data,
-        )
+            inserted += cur.rowcount  # 插入成���=1，被忽略=0
         conn.commit()
-        return len(data)
-    finally:
-        conn.close()
 
+    return inserted
 
 def fetch_recent_jobs(limit: int = 10, db_path: str = "jobs.db") -> list[dict]:
     with sqlite3.connect(db_path) as conn:

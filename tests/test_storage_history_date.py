@@ -16,13 +16,17 @@ def test_fetch_jobs_by_date(tmp_path):
         }
     ]
 
-    save_ranked_jobs(rows, db_path=str(db), run_at="2026-04-09T10:00:00")
-    save_ranked_jobs(rows, db_path=str(db), run_at="2026-04-08T10:00:00")
+
+    n1 = save_ranked_jobs(rows, db_path=str(db), run_at="2026-04-09T10:00:00")
+    n2 = save_ranked_jobs(rows, db_path=str(db), run_at="2026-04-08T10:00:00")
+
+    assert n1 == 1
+    assert n2 == 0
 
     d1 = fetch_jobs_by_date("2026-04-09", db_path=str(db))
     d2 = fetch_jobs_by_date("2026-04-08", db_path=str(db))
     d3 = fetch_jobs_by_date("2026-04-07", db_path=str(db))
 
     assert len(d1) == 1
-    assert len(d2) == 1
+    assert len(d2) == 0
     assert len(d3) == 0

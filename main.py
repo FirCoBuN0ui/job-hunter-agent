@@ -130,7 +130,7 @@ def main():
         run_at = datetime.now().isoformat(timespec="seconds")
         init_db(args.db)
         n_saved = save_ranked_jobs(topn, db_path=args.db, run_at=run_at)
-        logger.info("Saved %s ranked jobs to DB: %s", n_saved, args.db)
+        logger.info("DB upsert done: inserted=%s, attempted=%s, db=%s", n_saved, len(topn), args.db)
 
         logger.info("Done. total=%s, topn=%s", len(jobs), len(topn))
         print(f"Loaded jobs(after dedup): {len(jobs)}")
